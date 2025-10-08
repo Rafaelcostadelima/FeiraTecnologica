@@ -1,0 +1,19 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Códigos "prontos" */
+.branco{
+    color: #F0EBD8;
+}
+body {
+    background-color: #1D2D44;
+    color: #F0EBD8;
+}
+
+header{
+    background-color: #0D1321;
+    padding: 50px;
+    color: #F0EBD8;
+}
