@@ -193,7 +193,7 @@ h6 {
 }
 
 .header .nav-wrap {
-  background-color: color-mix(in srgb, var(--default-color), transparent 92%);
+  background-color: #1D2D44;
   margin-top: 10px;
   display: flex;
   justify-content: center;
@@ -901,7 +901,7 @@ textarea::placeholder {
 section,
 .section {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: #3E5C76;
   padding: 60px 0;
   scroll-margin-top: 133px;
   overflow: clip;
