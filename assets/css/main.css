@@ -61,7 +61,7 @@
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
-  color: var(--default-color);
+  color: #f0ebd8;
   background-color: var(--background-color);
   font-family: var(--default-font);
 }
@@ -193,7 +193,7 @@ h6 {
 }
 
 .header .nav-wrap {
-  background-color: #1D2D44;
+  background-color: #1d2d44b0;
   margin-top: 10px;
   display: flex;
   justify-content: center;
@@ -3229,18 +3229,18 @@ section,
 
 .contact .contact-sidebar .contact-header h3 {
   font-size: 28px;
-  font-weight: 300;
+  font-weight: 450;
   margin-bottom: 20px;
-  color: var(--heading-color);
+  color: #f0ebd8;
   letter-spacing: -0.3px;
 }
 
 .contact .contact-sidebar .contact-header p {
   font-size: 16px;
   line-height: 1.7;
-  color: var(--default-color);
+  color: #f0ebd8;
   margin-bottom: 0;
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .contact .contact-sidebar .contact-methods {
