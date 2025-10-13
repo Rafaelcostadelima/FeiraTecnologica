@@ -1112,7 +1112,6 @@ section,
 --------------------------------------------------------------*/
 .about {
   padding-top: 60px;
-  background-color: var(--background-color);
   padding-bottom: 20px;
 }
 
@@ -3153,10 +3152,10 @@ section,
   left: 0;
   font-size: 13px;
   font-weight: 500;
-  color: var(--heading-color);
+  color: #f0ebd8;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  opacity: 0.8;
+  opacity: 10;
 }
 
 .contact .contact-form-container .contact-form .form-field .form-input {
@@ -3178,7 +3177,7 @@ section,
 }
 
 .contact .contact-form-container .contact-form .form-field .form-input::placeholder {
-  color: #0d1321da;
+  color: #0d1321a1;
 
 }
 
@@ -3190,19 +3189,20 @@ section,
 }
 
 .contact .contact-form-container .contact-form .send-button {
-  background: transparent;
-  border: 1px solid var(--accent-color);
-  color: var(--accent-color);
+  background-color: #1d2d4490;
+  border: 1px solid #0d132149;
+  color: #F0EBD8;
   padding: 18px 40px;
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
   gap: 15px;
   transition: all 0.3s ease;
   cursor: pointer;
+  border-radius: 15px;
 }
 
 .contact .contact-form-container .contact-form .send-button .button-arrow {
@@ -3211,8 +3211,8 @@ section,
 }
 
 .contact .contact-form-container .contact-form .send-button:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  background: #748CAB;
+  color: #F0EBD8;
 }
 
 .contact .contact-form-container .contact-form .send-button:hover .button-arrow {
@@ -3220,17 +3220,23 @@ section,
 }
 
 .contact .contact-sidebar {
-  background: color-mix(in srgb, var(--accent-color), transparent 97%);
+  background: #0d1321c8;
   height: 100%;
-  padding: 60px 40px;
+  padding: 50px 40px;
+  border-radius: 30px;
 }
 
 .contact .contact-sidebar .contact-header {
   margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .contact .contact-sidebar .contact-header h3 {
-  font-size: 28px;
+  display: flex;
+  font-size: 40px;
+  justify-content: center;
   font-weight: 450;
   margin-bottom: 20px;
   color: #f0ebd8;
@@ -3238,6 +3244,8 @@ section,
 }
 
 .contact .contact-sidebar .contact-header p {
+  display: flex;
+  justify-content: center;
   font-size: 16px;
   line-height: 1.7;
   color: #f0ebd8;
@@ -3267,7 +3275,7 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-color);
+  color: #f0ebd8;
 }
 
 .contact .contact-sidebar .contact-method .contact-icon i {
