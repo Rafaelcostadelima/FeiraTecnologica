@@ -73,7 +73,7 @@ a {
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: #748CAB;
   text-decoration: none;
 }
 
@@ -261,7 +261,7 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color);
+    color: #75aaf3;
   }
 
   .navmenu .dropdown ul {
@@ -324,7 +324,7 @@ h6 {
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: var(--nav-color);
+    color: #F0EBD8;
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -344,8 +344,8 @@ h6 {
     inset: 60px 20px 20px 20px;
     padding: 10px 0;
     margin: 0;
-    border-radius: 6px;
-    background-color: var(--nav-mobile-background-color);
+    border-radius: 15px;
+    background-color: #0d1321;
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -354,7 +354,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-dropdown-color);
+    color: #f0ebd8;
     padding: 10px 20px;
     font-family: var(--nav-font);
     font-size: 17px;
@@ -390,7 +390,7 @@ h6 {
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-dropdown-hover-color);
+    color: #75aaf3;
   }
 
   .navmenu .active i,
@@ -453,8 +453,8 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background: var(--background-color);
-  font-size: 14px;
+  background: #0d1321;
+  font-size: 20px;
   padding: 80px 0 0;
   position: relative;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
@@ -657,7 +657,7 @@ h6 {
 .footer .footer-bottom {
   margin-top: 50px;
   padding: 25px 0;
-  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  background-color: #0d1321;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
@@ -810,7 +810,8 @@ textarea::placeholder {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: #1D2D44;
+  color: #e9e7e0;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -824,8 +825,8 @@ textarea::placeholder {
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
+  background-color: #748CAB;
+  color: #F0EBD8;
 }
 
 .scroll-top.active {
@@ -925,7 +926,7 @@ section,
 }
 
 .section-title h2 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 425;
   line-height: 1.2;
   color: #f0ebd8;
@@ -941,9 +942,9 @@ section,
 
 .section-title .subtitle {
   display: inline-block;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   font-weight: 400;
-  color: var(--accent-color);
+  color: #75aaf3;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 1.5rem;
@@ -956,9 +957,9 @@ section,
   bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 40px;
+  width: 75px;
   height: 1px;
-  background: var(--accent-color);
+  background: #75aaf3;
 }
 
 .section-title p {
@@ -2906,7 +2907,7 @@ section,
 }
 
 .team .member-card {
-  background: var(--surface-color);
+  background: #f0ece1;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
   border-radius: 14px;
   overflow: hidden;
@@ -2916,9 +2917,9 @@ section,
 }
 
 .team .member-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 30px color-mix(in srgb, var(--default-color), transparent 92%);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+  transform: translateY(10px);
+  box-shadow: 0 14px 50px color-mix(in srgb, var(--default-color), transparent 92%);
+  border-color: #0d1321;
 }
 
 .team .member-card:hover .member-media .social-list {
@@ -2947,7 +2948,7 @@ section,
   bottom: 12px;
   display: flex;
   gap: 10px;
-  background: color-mix(in srgb, var(--background-color), var(--accent-color) 6%);
+  background: #e9e7e0;;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   backdrop-filter: blur(4px);
   border-radius: 999px;
@@ -2966,15 +2967,15 @@ section,
   display: grid;
   place-items: center;
   color: var(--default-color);
-  background: var(--surface-color);
+  background: #f0ebd8;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .team .member-card .member-media .social-list a:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 30%);
+  background: #748CAB;
+  color: #F0EBD8;
+  border-color: #0d132141;
   transform: translateY(-2px);
 }
 
