@@ -932,6 +932,7 @@ section,
   color: #f0ebd8;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
+  
 }
 
 @media (max-width: 768px) {
@@ -1923,7 +1924,7 @@ section,
 
 .call-to-action .container {
   padding: 80px;
-  background: color-mix(in srgb, var(--default-color), transparent 96%);
+  background: #1D2D44;
   border-radius: 15px;
 }
 
@@ -2067,7 +2068,7 @@ section,
   font-style: italic;
   margin: 0 15px 0 15px;
   padding: 20px 20px 60px 20px;
-  background: color-mix(in srgb, var(--default-color), transparent 97%);
+  background: white;
   position: relative;
   border-radius: 6px;
   position: relative;
@@ -2388,7 +2389,7 @@ section,
 # Pricing Section
 --------------------------------------------------------------*/
 .pricing .pricing-item {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 96%);
+  background-color: #1D2D44;
   padding: 40px 40px;
   height: 100%;
   border-radius: 15px;
@@ -3300,7 +3301,7 @@ section,
 .contact .contact-sidebar .contact-method .contact-details p {
   font-size: 15px;
   line-height: 1.6;
-  color: var(--default-color);
+  color: #fafafa;
   margin-bottom: 0;
 }
 
