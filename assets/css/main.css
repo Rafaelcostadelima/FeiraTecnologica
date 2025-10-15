@@ -6,6 +6,14 @@
 * License: https://bootstrapmade.com/license/
 */
 
+/**
+* Template Name: LeadPage
+* Template URL: https://bootstrapmade.com/leadpage-bootstrap-landing-page-template/
+* Updated: Aug 12 2025 with Bootstrap v5.3.7
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
 /*--------------------------------------------------------------
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
@@ -1078,14 +1086,14 @@ section,
 }
 
 .hero .hero-buttons .btn.btn-primary {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  border-color: var(--accent-color);
+  background-color: #1D2D44;
+  color: #e9e7e0;
+  border-color: #0d1321;
 }
 
 .hero .hero-buttons .btn.btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), black 15%);
-  border-color: color-mix(in srgb, var(--accent-color), black 15%);
+  background-color: #44566d;
+  border-color: #0d132170;
   transform: translateY(-2px);
 }
 
@@ -1519,7 +1527,8 @@ section,
 
 .features .tab-content .content-area h3 {
   font-size: 36px;
-  font-weight: 300;
+  color: #f0ebd8;
+  font-weight: 700;
   line-height: 1.2;
   margin-bottom: 24px;
 }
@@ -3646,7 +3655,7 @@ section,
 
 .service-details .overview-card .overview-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -3742,7 +3751,7 @@ section,
 
 .service-details .success-story .story-metrics {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr));
   gap: 1rem;
   padding-top: 1.5rem;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
@@ -4463,4 +4472,55 @@ section,
     margin-right: 0;
     border-radius: 0;
   }
+}
+
+/*--------------------------------------------------------------
+# Custom Modal
+--------------------------------------------------------------*/
+.custom-modal .modal-content {
+  background-color: #0d1321;
+  color: #f0ebd8;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.custom-modal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.custom-modal .modal-header .modal-title {
+  color: #f0ebd8;
+}
+
+.custom-modal .modal-footer {
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.custom-modal .modal-body ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.custom-modal .modal-body ul li {
+  margin-bottom: 10px;
+}
+
+/*--------------------------------------------------------------
+# Custom Button for Modal
+--------------------------------------------------------------*/
+.btn-custom-modal {
+  background-color: #1D2D44;
+  padding: 10px 20px;
+  color: #e9e7e0;
+  border: 1px solid #0d1321;
+  border-color: #0d1321;
+  transition: all 0.3s ease;
+}
+
+.btn-custom-modal:hover {
+  background-color: #44566d;
+  color: #e9e7e0;
+  border-color: #0d132138;
+  transform: translateY(-2px);
 }
