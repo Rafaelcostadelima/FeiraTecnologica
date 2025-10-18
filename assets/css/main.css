@@ -1526,29 +1526,23 @@ section,
 }
 
 .features .tab-content .content-area h3 {
-  font-size: 36px;
+  font-size: 1.89rem;
   color: #f0ebd8;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 24px;
 }
 
-@media (max-width: 768px) {
-  .features .tab-content .content-area h3 {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 576px) {
-  .features .tab-content .content-area h3 {
-    font-size: 24px;
-  }
+.features .tab-content .content-area h5{
+  color: #f0ebd8;
+  font-weight: 600;
+  font-size: 1.4rem;
 }
 
 .features .tab-content .content-area p {
-  font-size: 16px;
+  font-size: 1.1rem;
   line-height: 1.7;
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  color: #f0ebd8;
   margin-bottom: 40px;
 }
 
@@ -1609,7 +1603,7 @@ section,
 
 .features .tab-content .content-area .feature-points .point-item i {
   font-size: 12px;
-  color: var(--accent-color);
+  color: #a8ceff;
   margin-top: 4px;
   flex-shrink: 0;
 }
@@ -1617,7 +1611,7 @@ section,
 .features .tab-content .content-area .feature-points .point-item span {
   font-size: 14px;
   line-height: 1.6;
-  color: var(--default-color);
+  color: #f0ebd8;
 }
 
 .features .tab-content .content-area .explore-link {
@@ -4478,6 +4472,7 @@ section,
 # Custom Modal
 --------------------------------------------------------------*/
 .custom-modal .modal-content {
+  display: flex;
   background-color: #0d1321;
   color: #f0ebd8;
   border-radius: 15px;
@@ -4489,6 +4484,7 @@ section,
 }
 
 .custom-modal .modal-header .modal-title {
+  justify-content: center;
   color: #f0ebd8;
 }
 
@@ -4504,6 +4500,14 @@ section,
 
 .custom-modal .modal-body ul li {
   margin-bottom: 10px;
+}
+
+.custom-modal .modal-body ul li a{
+  color: #F0EBD8;
+}
+
+.custom-modal .modal-body ul li a:hover{
+  color: #a2c6d5;
 }
 
 /*--------------------------------------------------------------
