@@ -91,7 +91,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  color: white;
   font-family: var(--heading-font);
 }
 
@@ -99,8 +99,8 @@ h6 {
 ------------------------------*/
 .php-email-form .error-message {
   display: none;
-  background: #df1529;
-  color: #ffffff;
+  background: #5f8dce;
+  color: #f0ebd8;
   text-align: left;
   padding: 15px;
   margin-bottom: 24px;
@@ -764,13 +764,14 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
-  border-color: var(--accent-color);
+  border-color: #75aaf3;
 }
 
 input[type=text]::placeholder,
 input[type=email]::placeholder,
 textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
+  margin-left: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -3164,12 +3165,12 @@ section,
 
 .contact .contact-form-container .contact-form .form-field .field-label {
   position: absolute;
-  top: -20px;
+  top: -25px;
   left: 0;
-  font-size: 13px;
+  font-size: rem;
   font-weight: 500;
   color: #f0ebd8;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.45px;
   text-transform: uppercase;
   opacity: 10;
 }
@@ -3182,19 +3183,19 @@ section,
   background: #f0ebd8;
   padding: 20px 0 15px 0;
   font-size: 16px;
+  padding-left: 20px;
   color: #0d1321;
   transition: all 0.3s ease;
 }
 
 .contact .contact-form-container .contact-form .form-field .form-input:focus {
   outline: none;
-  border-bottom-color: var(--accent-color);
+  border-bottom-color: #75aaf3;
   background: #f0ebd8;
 }
 
 .contact .contact-form-container .contact-form .form-field .form-input::placeholder {
   color: #0d1321a1;
-
 }
 
 .contact .contact-form-container .contact-form .form-field .message-input {
@@ -3202,6 +3203,7 @@ section,
   min-height: 120px;
   font-family: inherit;
   padding-top: 25px;
+
 }
 
 .contact .contact-form-container .contact-form .send-button {
@@ -4515,16 +4517,15 @@ section,
 /*--------------------------------------------------------------
 # Custom Button for Modal
 --------------------------------------------------------------*/
-.btn-custom-modal {
+#features .btn-custom-modal {
   background-color: #1D2D44;
   padding: 10px 20px;
   color: #e9e7e0;
   border: 1px solid #0d1321;
-  border-color: #0d1321;
   transition: all 0.3s ease;
 }
 
-.btn-custom-modal:hover {
+#features .btn-custom-modal:hover {
   background-color: #44566d;
   color: #e9e7e0;
   border-color: #0d132138;
