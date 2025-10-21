@@ -2009,6 +2009,7 @@ section,
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
+  color: #1D2D44;
 }
 
 .features-cards .testimonial-content .testimonial-author span {
@@ -2058,6 +2059,13 @@ section,
   }
 }
 
+.testimonial-content .quote-icon {
+  background-color: #059652;
+}
+
+.testimonial-content .quote-icon i {
+  color: #466793;
+}
 /*--------------------------------------------------------------
 # Call To Action Section
 --------------------------------------------------------------*/
@@ -2080,6 +2088,7 @@ section,
 .call-to-action .content h3 {
   font-size: 48px;
   font-weight: 700;
+  color: #f0ebd8;
 }
 
 .call-to-action .content h3 em {
@@ -2100,7 +2109,7 @@ section,
 }
 
 .call-to-action .content p {
-  color: #ffffff;
+  color: #f0ebd8;
   font-weight: 400;
   font-size: 18px;
 }
@@ -2114,11 +2123,12 @@ section,
   border-radius: 5px;
   transition: 0.5s;
   margin-top: 10px;
-  background: #75aaf3;
+  background: #5283c7;
 }
 
 .call-to-action .content .cta-btn:hover {
-  background: #5a7daa;
+  background: #466793;
+  cursor: pointer;
 }
 
 .call-to-action .img {
