@@ -1798,6 +1798,83 @@ section,
   }
 }
 
+/* Estilos Customizados para o Acordeão na Seção Features
+--------------------------------------------------------------*/
+#features .accordion {
+  --bs-accordion-border-width: 0;
+  --bs-accordion-border-radius: 0.75rem;
+  --bs-accordion-inner-border-radius: 0.75rem;
+  --bs-accordion-btn-padding-x: 1.5rem;
+  --bs-accordion-btn-padding-y: 1.25rem;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem #1d2d443b;
+  --bs-accordion-body-padding-x: 1.5rem;
+  --bs-accordion-body-padding-y: 1.5rem;
+  --bs-accordion-active-color: #75aaf3;
+  --bs-accordion-active-bg: #5283c7;
+}
+
+#features .accordion-item {
+  background-color: #224372aa;
+  border-radius: 15px;
+}
+
+#features .accordion-button {
+  background-color: #1D2D44;
+  color: #f0ebd8;
+  font-weight: 500;
+  font-family: var(--heading-font);
+  font-size: 1.1rem;
+}
+
+#features .accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+
+#features .accordion-button::after {
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23f0ebd8'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2375aaf3'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+#features .accordion-body {
+  color: #f0ebd8d5
+}
+
+#features .accordion-body .feature-points {
+  margin-bottom: 0;
+}
+
+/* Estilo para o Card de Ajuda na Aba 4 da Seção Features
+--------------------------------------------------------------*/
+#features .help-guide-container {
+  background-color: #E1E4E9;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+#features .help-guide-container .service-icon{
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+
+#features .help-guide-container .service-content {
+  padding: 5px;
+}
+
+#features .help-guide-container .service-content h4 a {
+  color: #1D2D44;
+}
+
+#features .help-guide-container .service-content h4 a:hover {
+  color: #75aaf3;
+}
+
+#features .help-guide-container .service-content p {
+  color: #555;
+}
+
 /*--------------------------------------------------------------
 # Features Cards Section
 --------------------------------------------------------------*/
@@ -2018,7 +2095,7 @@ section,
   right: 0;
   bottom: 10px;
   height: 10px;
-  background: color-mix(in srgb, var(--accent-color), transparent 30%);
+  background: #1a65cfa2;
   z-index: -1;
 }
 
@@ -2029,7 +2106,7 @@ section,
 }
 
 .call-to-action .content .cta-btn {
-  color: var(--contrast-color);
+  color: #f0ebd8;
   font-weight: 500;
   font-size: 16px;
   display: inline-block;
@@ -2037,11 +2114,11 @@ section,
   border-radius: 5px;
   transition: 0.5s;
   margin-top: 10px;
-  background: var(--accent-color);
+  background: #75aaf3;
 }
 
 .call-to-action .content .cta-btn:hover {
-  background: color-mix(in srgb, var(--accent-color) 90%, black 15%);
+  background: #5a7daa;
 }
 
 .call-to-action .img {
@@ -2095,24 +2172,25 @@ section,
   margin: -40px 0 0 40px;
   position: relative;
   z-index: 2;
-  border: 6px solid var(--background-color);
+  border: 6px solid #ffffff;
 }
 
 .testimonials .testimonial-item h3 {
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0 5px 45px;
+  color: #f0ebd8;
 }
 
 .testimonials .testimonial-item h4 {
   font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: #f0ebd8;
   margin: 0 0 0 45px;
 }
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  color: #75aaf3;
   font-size: 26px;
   line-height: 0;
 }
@@ -2205,9 +2283,23 @@ section,
   transition: all 0.4s ease;
 }
 
+/* Só uns ajustes aqui em relação da fonte */
+.text-brand-darkblue {
+  color: #1D2D44 !important;
+}
+
+.text-brand-darkblue a {
+  color: #1D2D44 !important;
+}
+
+.text-brand-darkblue a:hover {
+  color: #75aaf3 !important;
+}
+
+
 .services .services-showcase .featured-service .service-overlay .overlay-content {
   text-align: center;
-  color: var(--contrast-color);
+  color: #1D2D44;
   padding: 2rem;
   transform: translateY(30px);
   transition: transform 0.4s ease;
@@ -3962,9 +4054,7 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
+/* .starter-section {} */
 
 /*--------------------------------------------------------------
 # Portfolio Details Section
@@ -4534,6 +4624,7 @@ section,
   color: #f0ebd8;
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
 }
 
 .custom-modal .modal-header {
@@ -4568,33 +4659,18 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Custom Button for Modal
+# Botão Customizado para Modais (Estilo Global)
 --------------------------------------------------------------*/
-#features .btn-custom-modal {
+.btn-custom-modal {
   background-color: #1D2D44;
   padding: 10px 20px;
-  color: #e9e7e0;
+  color: #e9e7e0; /* A cor da fonte que faltava! */
   border: 1px solid #1D2D44;
+  border-radius: 12px; /* Adicionando para consistência */
   transition: all 0.3s ease;
 }
 
-#features .btn-custom-modal-dentro{
-  background-color: #1D2D44;
-  padding: 10px 20px;
-  color: green;
-  border: 1px solid #1D2D44;
-  transition: all 0.3s ease;
-}
-
-#features .btn-custom-modal-dentro:hover{
-  background-color: #1D2D44;
-  padding: 10px 20px;
-  color: green;
-  border: 1px solid #1D2D44;
-  transition: all 0.3s ease;
-}
-
-#features .btn-custom-modal:hover {
+.btn-custom-modal:hover {
   background-color: #44566d;
   color: #e9e7e0;
   border-color: #0d132138;
