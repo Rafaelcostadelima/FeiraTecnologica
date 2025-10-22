@@ -505,7 +505,7 @@ h6 {
   color: var(--default-color);
   background: #0d1321;
   font-size: 20px;
-  padding: 80px 0 0;
+  padding: 0;
   position: relative;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
@@ -705,7 +705,7 @@ h6 {
 }
 
 .footer .footer-bottom {
-  margin-top: 50px;
+  margin-top: 0;
   padding: 25px 0;
   background-color: #0d1321;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
@@ -1798,9 +1798,10 @@ section,
   }
 }
 
-/* Estilos Customizados para o Acordeão na Seção Features
+/* Estilos Customizados para os Acordeões (Depressão & Abandono Emocional)
 --------------------------------------------------------------*/
-#features .accordion {
+#features .accordion,
+#abandono .accordion {
   --bs-accordion-border-width: 0;
   --bs-accordion-border-radius: 0.75rem;
   --bs-accordion-inner-border-radius: 0.75rem;
@@ -1813,12 +1814,20 @@ section,
   --bs-accordion-active-bg: #5283c7;
 }
 
-#features .accordion-item {
+#features .accordion-item,
+#abandono .accordion-item {
   background-color: #224372aa;
   border-radius: 15px;
+  margin-bottom: 1rem; /* Adicionei de volta a margem para separar os itens */
 }
 
-#features .accordion-button {
+#features .accordion-item:last-child,
+#abandono .accordion-item:last-child {
+    margin-bottom: 0; /* Remove a margem apenas do último item */
+}
+
+#features .accordion-button,
+#abandono .accordion-button {
   background-color: #1D2D44;
   color: #f0ebd8;
   font-weight: 500;
@@ -1826,26 +1835,38 @@ section,
   font-size: 1.1rem;
 }
 
-#features .accordion-button:not(.collapsed) {
+#features .accordion-button:not(.collapsed),
+#abandono .accordion-button:not(.collapsed) {
   box-shadow: none;
 }
 
-#features .accordion-button::after {
+#features .accordion-button::after,
+#abandono .accordion-button::after {
   --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23f0ebd8'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2375aaf3'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
-#features .accordion-body {
-  color: #f0ebd8d5
+#features .accordion-body,
+#abandono .accordion-body {
+  color: #f0ebd8d5;
 }
 
-#features .accordion-body .feature-points {
+#features .accordion-body .feature-points,
+#abandono .accordion-body .feature-points {
   margin-bottom: 0;
 }
 
 /* Estilo para o Card de Ajuda na Aba 4 da Seção Features
 --------------------------------------------------------------*/
 #features .help-guide-container {
+  background-color: #E1E4E9;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+#abandono .help-guide-container {
   background-color: #E1E4E9;
   padding: 1.5rem;
   border-radius: 15px;
@@ -1873,6 +1894,24 @@ section,
 
 #features .help-guide-container .service-content p {
   color: #555;
+}
+
+@media (min-width: 992px) {
+
+  #features .help-guide-container .services-showcase .col-lg-6:last-child {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+
+  #features .help-guide-container .services-showcase .col-lg-6:last-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    bottom: 2rem;
+    width: 1px;
+    background-color: rgba(29, 45, 68, 0.2);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -2698,25 +2737,21 @@ section,
 --------------------------------------------------------------*/
 .faq .faq-item {
   margin-bottom: 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-bottom: #1D2D44;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.faq .faq-item:last-child {
-  border-bottom: none;
-}
-
 .faq .faq-item.faq-active .faq-header .faq-number {
-  color: var(--accent-color);
+  color: #f0ebd8;
   font-weight: 500;
 }
 
 .faq .faq-item.faq-active .faq-header h4 {
-  color: var(--accent-color);
+  color: #e9e7e0;
 }
 
 .faq .faq-item.faq-active .faq-header .faq-toggle {
-  color: var(--accent-color);
+  color: #f0ebd8;
   transform: rotate(0deg);
 }
 
@@ -2749,18 +2784,22 @@ section,
 .faq .faq-item .faq-header {
   display: flex;
   align-items: center;
-  padding: 40px 0;
+  padding: 40px 10px;
   cursor: pointer;
   gap: 0;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  background-color: #5283c7;
   transition: all 0.3s ease;
 }
 
-.faq .faq-item .faq-header:hover .faq-number {
-  transform: scale(1.1);
+.faq .faq-item .faq-header:hover {
+  transform: scale(1.02);
 }
 
 .faq .faq-item .faq-header:hover .faq-toggle {
   transform: scale(1.1);
+  background-color: #5283c7;
 }
 
 .faq .faq-item .faq-header .faq-number {
@@ -2769,7 +2808,7 @@ section,
   font-family: var(--heading-font);
   font-size: 1.1rem;
   font-weight: 300;
-  color: #1D2D44;
+  color: #f0ebd8;
   transition: all 0.3s ease;
   letter-spacing: -0.02em;
 }
@@ -2803,6 +2842,7 @@ section,
 .faq .faq-item .faq-header .faq-toggle i {
   position: absolute;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: #f0ebd8;
 }
 
 .faq .faq-item .faq-content {
@@ -2814,16 +2854,77 @@ section,
 }
 
 .faq .faq-item .faq-content .content-inner {
-  padding: 0 80px 40px 80px;
+  padding: 20px 80px 20px 80px;
+  background-color: #1D2D44;
+  border-radius: 10px;
+  margin-bottom: 10px;
   overflow: hidden;
 }
 
 .faq .faq-item .faq-content .content-inner p {
   margin: 0;
-  color: #ffffff;
+  color: #f0ebd8;
   line-height: 1.8;
   font-size: 1rem;
   font-weight: 300;
+}
+
+/* Estilos Customizados para o Acordeão na Seção FAQ
+--------------------------------------------------------------*/
+.accordion-faq .accordion-item {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.accordion-faq .accordion-item:last-child {
+  border-bottom: 0;
+}
+
+.accordion-faq .accordion-button {
+  padding: 25px 0;
+  background-color: transparent;
+  color: #f0ebd8;
+  font-weight: 400;
+  font-family: var(--heading-font);
+  font-size: 1.25rem;
+  text-align: left;
+}
+
+.accordion-faq .accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-faq .accordion-button:not(.collapsed) {
+  color: #75aaf3;
+  box-shadow: none;
+}
+
+.accordion-faq .accordion-button .faq-number {
+  margin-right: 15px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.accordion-faq .accordion-button:not(.collapsed) .faq-number {
+  color: #75aaf3;
+}
+
+/* Customização dos ícones de abrir/fechar */
+.accordion-faq .accordion-button::after {
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23f0ebd8'%3e%3cpath fill-rule='evenodd' d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2375aaf3'%3e%3cpath fill-rule='evenodd' d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3e%3c/svg%3e");
+}
+
+.accordion-faq .accordion-body {
+  padding: 0 0 25px 45px;
+}
+
+.accordion-faq .accordion-body p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -3100,15 +3201,16 @@ section,
 
 .team .member-card .member-media {
   position: relative;
-  aspect-ratio: 1/1;
+  height: 350px;
   background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  overflow: hidden;
 }
 
 .team .member-card .member-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  object-position: center top;
 }
 
 .team .member-card .member-media .social-list {
