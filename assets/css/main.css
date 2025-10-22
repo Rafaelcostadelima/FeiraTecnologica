@@ -103,7 +103,8 @@ h6 {
   color: #f0ebd8;
   text-align: left;
   padding: 15px;
-  margin-bottom: 24px;
+  border-radius: 15px;
+  margin-bottom: 20px;
   font-weight: 600;
 }
 
@@ -119,10 +120,11 @@ h6 {
 
 .php-email-form .loading {
   display: none;
-  background: var(--surface-color);
+  background: #f0ebd8;
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
+  border-radius: 15px;
 }
 
 .php-email-form .loading:before {
@@ -132,7 +134,7 @@ h6 {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
+  border: 3px solid #75aaf3;
   border-top-color: var(--surface-color);
   animation: php-email-form-loading 1s linear infinite;
 }
