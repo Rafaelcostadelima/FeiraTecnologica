@@ -4791,10 +4791,10 @@ section,
 .btn-custom-modal {
   background-color: #1D2D44;
   padding: 10px 20px;
-  color: #e9e7e0; /* A cor da fonte que faltava! */
+  color: #e9e7e0;
   border: 1px solid #1D2D44;
-  border-radius: 12px; /* Adicionando para consistência */
-  transition: all 0.3s ease;
+  border-radius: 10px;
+  transition: all 0.6s ease;
 }
 
 .btn-custom-modal:hover {
@@ -4802,4 +4802,5 @@ section,
   color: #e9e7e0;
   border-color: #0d132138;
   transform: translateY(-2px);
+  box-shadow: 2px 6px 15px #0d1321;
 }
