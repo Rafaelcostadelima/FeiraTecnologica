@@ -4804,3 +4804,12 @@ section,
   transform: translateY(-2px);
   box-shadow: 2px 6px 15px #0d1321;
 }
+
+.btn-custom-modal1 {
+  background-color: #1D2D44;
+  padding: 10px 20px;
+  color: #e9e7e0;
+  border: 1px solid #1D2D44;
+  border-radius: 10px;
+  transition: all 0.6s ease;
+}
