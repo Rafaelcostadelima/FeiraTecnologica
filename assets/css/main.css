@@ -826,7 +826,7 @@ textarea::placeholder {
   inset: 0;
   z-index: 999999;
   overflow: hidden;
-  background: var(--background-color);
+  background: #3e5c7694;
   transition: all 0.6s ease-out;
 }
 
@@ -836,7 +836,7 @@ textarea::placeholder {
   top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #ffffff;
-  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-color: #e9e7e0 transparent #f0ebd8 transparent;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -3383,10 +3383,10 @@ section,
 --------------------------------------------------------------*/
 .contact .contact-form-container {
   padding: 60px 0;
-}
-
-.contact .container .subtitle {
-  margin-bottom: 60px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
 }
 
 .contact .contact-form-container .form-intro {
@@ -3509,11 +3509,14 @@ section,
 }
 
 .contact .contact-sidebar {
-  margin-top: 15rem;
+  margin-top: 0;
   background: #0d1321c8;
-  height: 50%;
+  height: 100%;
   padding: 60px 30px;
   border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact .contact-sidebar .contact-header {
@@ -3634,20 +3637,22 @@ section,
   transform: translateY(-2px);
 }
 
-@media (max-width: 992px) {
-  .contact .contact-form-container {
-    padding: 40px 0;
+@media (max-width: 991px) {
+  .contact .contact-sidebar {
+    margin-top: 0;
+    margin-bottom: 40px;
   }
 
-  .contact .contact-sidebar {
-    padding: 40px 30px;
-    margin-bottom: 40px;
+  .contact .contact-form-container {
+    padding-top: 0;
+    padding-bottom: 40px;
   }
 }
 
 @media (max-width: 768px) {
   .contact .contact-form-container .form-intro {
     margin-bottom: 40px;
+    margin-top: 20px;
     text-align: center;
   }
 
