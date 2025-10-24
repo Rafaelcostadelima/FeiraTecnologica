@@ -4,15 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Hope - Quiz</title> <!-- Título alterado para clareza -->
+  <title>Hope - Quiz de Autoavaliação</title>
   <meta name="description"
-    content="Site para a ajuda psicológica, principalmente contra a depressão e o abandono emocional.">
+    content="Faça uma autoavaliação inicial sobre sintomas de depressão. Este quiz não substitui um diagnóstico profissional.">
   <meta name="keywords"
-    content="depressão, saúde mental, abandono emocional, ajuda psicológica, filhos do quarto, pássaro contra a vidraça, sintomas de depressão, tratamento para depressão, apoio emocional">
+    content="quiz depressão, teste de depressão, autoavaliação saúde mental, sintomas de depressão">
 
   <!-- Favicons -->
   <link href="assets/img/logomodificada.ico" rel="icon">
-  <link href="assets.img/logomodificada.ico" rel="apple-touch-icon">
+  <link href="assets/img/logomodificada.ico" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -46,9 +46,8 @@
     <div class="nav-wrap">
       <div class="container d-flex justify-content-center position-relative">
         <nav id="navmenu" class="navmenu">
-          <!-- O menu aqui serve como uma forma fácil de voltar para qualquer seção -->
           <ul>
-            <li><a href="index.html#hero">Início</a></li>
+            <li><a href="index.html#hero" class="active">Início</a></li>
             <li><a href="index.html#about">Sobre</a></li>
             <li><a href="index.html#features">Depressão</a></li>
             <li><a href="index.html#abandono">Abandono Emocional</a></li>
@@ -56,7 +55,7 @@
             <li><a href="index.html#testimonials">Testemunhas</a></li>
             <li><a href="index.html#team">Equipe</a></li>
             <li><a href="index.html#contact">Feedback</a></li>
-            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="quiz.html">Teste</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -65,15 +64,76 @@
   </header>
 
   <main class="main">
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <div class="hero-content">
+        <div class="container position-relative">
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1 data-aos="fade-up">Faça o teste agora mesmo!</h1>
+              <p data-aos="fade-up" data-aos-delay="100">Faça o teste de depressão logo abaixo. Hope, sua saúde mental em primeiro lugar!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="quiz-section" class="quiz-section section">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <span class="subtitle">Teste de</span>
+          <h2>Autoavaliação</h2>
+          <p>Responda com base em como você se sentiu nas <strong>últimas duas semanas</strong>.</p>
+        </div>
+
+        <div class="quiz-disclaimer alert alert-warning" role="alert" data-aos="fade-up" data-aos-delay="100">
+          <h4 class="alert-heading"><i class="bi bi-exclamation-triangle-fill"></i> Atenção!</h4>
+          <p>Este questionário é uma ferramenta de triagem e <strong>NÃO SUBSTITUI</strong> um diagnóstico profissional.
+            Seu objetivo é ajudar na auto-observação de sintomas. Independentemente do resultado, se você não se sente
+            bem, <strong>procure a ajuda de um psicólogo ou psiquiatra</strong>.</p>
+        </div>
+
+        <form id="quizForm" data-aos="fade-up" data-aos-delay="200">
+          <!-- As perguntas do quiz serão inseridas aqui pelo JavaScript -->
+        </form>
+
+        <div id="result-container" class="results-card" style="display: none;">
+          <!-- O resultado será exibido aqui -->
+        </div>
+
+      </div>
+    </section>
   </main>
 
-  <!-- Preloader (Não é estritamente necessário aqui, mas pode ser mantido) -->
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="copyright">
+              <p>© Copyright <strong class="px-1 sitename">Hope</strong>. Todos os direitos reservados.</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="credits">Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- O validate.js não é necessário nesta página, mas não prejudica -->
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
@@ -82,6 +142,193 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-</body>
+  <!-- SCRIPT DO QUIZ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const quizData = [
+        {
+          question: "Pouco interesse ou prazer em fazer as coisas?",
+          options: [
+            { text: "Nenhuma vez", value: 0 },
+            { text: "Alguns dias", value: 1 },
+            { text: "Mais da metade dos dias", value: 2 },
+            { text: "Quase todos os dias", value: 3 }
+          ]
+        },
+        {
+          question: "Sentir-se para baixo, deprimido(a) ou sem esperança?",
+          options: [
+            { text: "Nenhuma vez", value: 0 },
+            { text: "Alguns dias", value: 1 },
+            { text: "Mais da metade dos dias", value: 2 },
+            { text: "Quase todos os dias", value: 3 }
+          ]
+        },
+        {
+          question: "Dificuldade para dormir ou permanecer dormindo, ou dormir mais do que o de costume?",
+          options: [
+            { text: "Nenhuma vez", value: 0 },
+            { text: "Alguns dias", value: 1 },
+            { text: "Mais da metade dos dias", value: 2 },
+            { text: "Quase todos os dias", value: 3 }
+          ]
+        },
+        {
+          question: "Sentir-se cansado(a) ou com pouca energia?",
+          options: [
+            { text: "Nenhuma vez", value: 0 },
+            { text: "Alguns dias", value: 1 },
+            { text: "Mais da metade dos dias", value: 2 },
+            { text: "Quase todos os dias", value: 3 }
+          ]
+        },
+        {
+          question: "Falta de apetite ou comer mais do que o de costume?",
+          options: [
+            { text: "Nenhuma vez", value: 0 },
+            { text: "Alguns dias", value: 1 },
+            { text: "Mais da metade dos dias", value: 2 },
+            { text: "Quase todos os dias", value: 3 }
+          ]
+        },
+        {
+          question: "Sentir-se mal consigo mesmo(a) ou que você é um fracasso ou que decepcionou a si mesmo(a) ou sua família?",
+          options: [
+            { text: "Nenhuma vez", value: 0 },
+            { text: "Alguns dias", value: 1 },
+            { text: "Mais da metade dos dias", value: 2 },
+            { text: "Quase todos os dias", value: 3 }
+          ]
+        },
+        {
+          question: "Dificuldade para se concentrar nas coisas, como ler o jornal ou ver televisão?",
+          options: [
+            { text: "Nenhuma vez", value: 0 },
+            { text: "Alguns dias", value: 1 },
+            { text: "Mais da metade dos dias", value: 2 },
+            { text: "Quase todos os dias", value: 3 }
+          ]
+        },
+        {
+          question: "Lentidão para se movimentar ou falar, a ponto de outras pessoas perceberem? Ou o oposto – estar tão agitado(a) ou inquieto(a) que você fica andando de um lado para o outro muito mais do que o de costume?",
+          options: [
+            { text: "Nenhuma vez", value: 0 },
+            { text: "Alguns dias", value: 1 },
+            { text: "Mais da metade dos dias", value: 2 },
+            { text: "Quase todos os dias", value: 3 }
+          ]
+        },
+        {
+          question: "Pensamentos de que seria melhor estar morto(a) ou de se ferir de alguma maneira?",
+          options: [
+            { text: "Nenhuma vez", value: 0 },
+            { text: "Alguns dias", value: 1 },
+            { text: "Mais da metade dos dias", value: 2 },
+            { text: "Quase todos os dias", value: 3 }
+          ]
+        }
+      ];
 
+      const quizForm = document.getElementById('quizForm');
+      const resultContainer = document.getElementById('result-container');
+
+      function buildQuiz() {
+        let formHTML = '';
+        quizData.forEach((item, index) => {
+          const questionIndex = index + 1;
+          formHTML += `
+            <div class="question-block card mb-4">
+              <div class="card-body">
+                <p class="question-text"><strong>${questionIndex}.</strong> ${item.question}</p>
+                <div class="options-group">
+          `;
+          item.options.forEach((option, optionIndex) => {
+            const optionId = `q${questionIndex}o${optionIndex}`;
+            formHTML += `
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="q${questionIndex}" id="${optionId}" value="${option.value}" required>
+                <label class="form-check-label" for="${optionId}">${option.text}</label>
+              </div>
+            `;
+          });
+          formHTML += `
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        formHTML += `<div class="text-center mt-4"><button type="submit" class="btn btn-custom-modal mt-4">Ver resultado</button></div>`;
+        quizForm.innerHTML = formHTML;
+      }
+
+      function displayResult(score) {
+        let result = {};
+
+        if (score <= 4) {
+          result = {
+            title: "Sintomas de depressão mínimos ou ausentes",
+            text: "Sua pontuação sugere que você provavelmente não tem um quadro depressivo no momento. Continue cuidando de sua saúde mental e observando como se sente. Se algo mudar, não hesite em procurar apoio.",
+            class: "result-minimal"
+          };
+        } else if (score <= 9) {
+          result = {
+            title: "Sintomas de depressão leves",
+            text: "Sua pontuação indica a presença de sintomas depressivos leves. Pode ser um bom momento para observar o que está causando esses sentimentos e adotar práticas de autocuidado, como exercícios, boa alimentação e conversar com amigos. Considerar uma consulta com um psicólogo pode ser muito útil para entender e lidar com essas questões.",
+            class: "result-light"
+          };
+        } else if (score <= 14) {
+          result = {
+            title: "Sintomas de depressão moderados",
+            text: "Sua pontuação sugere sintomas depressivos moderados que podem estar afetando seu dia a dia. É <strong>altamente recomendável</strong> que você converse com um profissional de saúde mental (psicólogo ou psiquiatra). A terapia e, se necessário, outras abordagens, podem fazer uma grande diferença.",
+            class: "result-moderate"
+          };
+        } else if (score <= 19) {
+          result = {
+            title: "Sintomas de depressão moderadamente severos",
+            text: "Sua pontuação indica um quadro de sintomas depressivos que provavelmente está causando um sofrimento significativo e impactando suas atividades. É <strong>muito importante</strong> que você procure ajuda profissional o mais rápido possível. Você não precisa passar por isso sozinho(a).",
+            class: "result-moderately-severe"
+          };
+        } else {
+          result = {
+            title: "Sintomas de depressão severos",
+            text: "Sua pontuação é alta e indica a presença de sintomas severos de depressão, que exigem <strong>atenção profissional imediata</strong>. Por favor, entre em contato com um psicólogo, psiquiatra ou um serviço de emergência. Sua saúde é a prioridade.",
+            class: "result-severe"
+          };
+        }
+
+        const resultHTML = `
+          <div class="card-body ${result.class}">
+            <h3 class="result-title">${result.title}</h3>
+            <p class="result-score">Sua pontuação: <strong>${score}</strong></p>
+            <p class="result-text">${result.text}</p>
+            <hr>
+            <div class="result-action">
+              <h4>Onde procurar ajuda?</h4>
+              <p>Lembre-se: pedir ajuda é um ato de coragem.</p>
+              <a href="https://www.cvv.org.br/" class="btn btn-warning me-2 mb-2" target="_blank"><i class="bi bi-telephone-fill"></i> Acesse o site da CVV (188)</a>
+              <a href="https://portal.saude.gov.br/saude-de-a-a-z/caps/" class="btn btn-info mb-2" target="_blank"><i class="bi bi-hospital"></i> Encontrar um CAPS (SUS)</a>
+            </div>
+          </div>
+        `;
+
+        resultContainer.innerHTML = resultHTML;
+        resultContainer.style.display = 'block';
+        resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      quizForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        let totalScore = 0;
+        const formData = new FormData(quizForm);
+        for (let value of formData.values()) {
+          totalScore += parseInt(value, 10);
+        }
+        displayResult(totalScore);
+      });
+
+      buildQuiz();
+    });
+  </script>
+
+</body>
 </html>
