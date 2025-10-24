@@ -1024,6 +1024,7 @@ section,
   max-width: 900px;
   margin: 0 auto;
   text-wrap: balance;
+  text-align: center;
 }
 
 .container .section-title p {
@@ -1207,10 +1208,12 @@ section,
 }
 
 .about .content p {
-  font-size: 1.2rem;
+  font-size: 1.08rem;
   line-height: 1.8;
+  margin-right: 20px;
+  text-align: justify;
   color: #f0ebd8;
-  margin-bottom: 2rem;
+  margin-bottom: 1.9rem;
 }
 
 .about .content p.lead {
@@ -1700,6 +1703,16 @@ section,
   padding-left: 40px;
 }
 
+#features #features-tab-4 .col-lg-6:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#features #features-tab-4 .overlay-content {
+  text-align: center;
+}
+
 @media (max-width: 992px) {
   .features .tab-content .visual-content {
     padding-left: 0;
@@ -1915,7 +1928,51 @@ section,
     width: 1px;
     background-color: rgba(29, 45, 68, 0.2);
   }
+
+  #abandono .help-guide-container .services-showcase .col-lg-6:last-child {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+
+  #abandono .help-guide-container .services-showcase .col-lg-6:last-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    bottom: 2rem;
+    width: 1px;
+    background-color: rgba(29, 45, 68, 0.2);
+  }
+
+  #abandono #abandono-tab-4 .col-lg-6:first-child {
+    padding-right: 2.5rem;
+  }
 }
+
+#abandono #abandono-tab-4 .col-lg-6:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#abandono #abandono-tab-4 .service-image {
+  border-radius: 15px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(13, 19, 33, 0.1);
+}
+
+#abandono .help-guide-container .services-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+#abandono #abandono-tab-4 .overlay-content {
+  text-align: center;
+}
+
 
 /*--------------------------------------------------------------
 # Features Cards Section
@@ -3706,6 +3763,22 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Ajuste Responsivo para Botões do Formulário de Contato
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+  .contact .contact-form-container .contact-form .send-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-left: 0;
+  }
+
+  .contact .contact-form-container .contact-form .send-button:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*--------------------------------------------------------------
 # Service Details Section
 --------------------------------------------------------------*/
 .service-details .service-hero {
@@ -4843,6 +4916,8 @@ section,
   border: 1px solid #1D2D44;
   border-radius: 10px;
   transition: all 0.6s ease;
+  margin-top: 8px;
+  margin-bottom: 20px;
 }
 
 /*--------------------------------------------------------------
