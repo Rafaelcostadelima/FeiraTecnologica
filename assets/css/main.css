@@ -252,6 +252,29 @@ h6 {
   z-index: 1;
 }
 
+/*--------------------------------------------------------------
+# Responsividade do Banner (Hero Section) para Telas Menores
+--------------------------------------------------------------*/
+
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: url('../img/Bannerofc-mobile.png'); 
+    background-size: cover;
+    background-position: center center;
+    min-height: 90vh;
+    padding-top: 150px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
 .hero .hero-content {
   position: relative;
   z-index: 2;
@@ -3736,18 +3759,30 @@ section,
 }
 
 @media (max-width: 991px) {
-
-  /* Remove a margem superior gigante da barra lateral de contato */
   .contact .contact-sidebar {
     margin-top: 0;
   }
 
-  /* Reduz o preenchimento vertical do container do formulário */
   .contact .contact-form-container {
     padding-top: 0;
     padding-bottom: 40px;
   }
 
+}
+
+/*--------------------------------------------------------------
+# Estilo para Link de E-mail na Barra Lateral de Contato
+--------------------------------------------------------------*/
+
+.contact-sidebar .contact-details p a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-sidebar .contact-details p a:hover {
+  color: #75aaf3;
+  text-decoration: underline;
 }
 
 /* Exemplo de estilo para diferenciar o botão de reset */
@@ -5024,9 +5059,50 @@ section,
   font-weight: 500;
 }
 
-/* Cores de fundo para os resultados */
+.quiz-section .result-action {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 576px) {
+  .quiz-section .result-action {
+    grid-template-columns: 1fr;
+  }
+}
+
 .result-minimal { background-color: rgba(60, 179, 113, 0.2); border-left: 5px solid #3cb371; }
 .result-light { background-color: rgba(255, 215, 0, 0.2); border-left: 5px solid #ffd700; }
 .result-moderate { background-color: rgba(255, 165, 0, 0.2); border-left: 5px solid #ffa500; }
 .result-moderately-severe { background-color: rgba(255, 69, 0, 0.2); border-left: 5px solid #ff4500; }
 .result-severe { background-color: rgba(220, 20, 60, 0.2); border-left: 5px solid #dc143c; }
+
+/*--------------------------------------------------------------
+# Estilos Personalizados para Botões da Modal de Confirmação
+--------------------------------------------------------------*/
+
+/* Estilo para o botão de Cancelar */
+.btn-cancel {
+  background-color: #507bb2;
+  border-color: #4e5d6c;
+  color: #f0ebd8;
+}
+
+.btn-cancel:hover {
+  background-color: #56687a;
+  border-color: #6a7b8c;
+  color: #f0ebd8;
+}
+
+/* Estilo para o botão de Confirmação (perigo) */
+.btn-confirm-danger {
+  background-color: red;
+  border-color: rgb(179, 7, 7);
+  color: #f0ebd8;
+}
+
+.btn-confirm-danger:hover {
+  background-color: #7e0606;
+  border-color: #7e0606;
+  color: #f0ebd8;
+}
