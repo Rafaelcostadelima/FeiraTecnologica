@@ -1837,6 +1837,98 @@ section,
   }
 }
 
+/*--------------------------------------------------------------
+# Botões de Navegação das Abas
+--------------------------------------------------------------*/
+.tab-navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem; /* Espaçamento acima */
+  gap: 1rem; /* Espaço entre os botões */
+}
+
+/* Estilo base do botão de navegação */
+.btn-tab-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #1d2d44;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-tab-nav:hover {
+  background-color: #1d2d4499;
+  color: #f0ebd8;
+}
+
+
+@media (max-width: 576px) {
+  .tab-navigation-buttons {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .tab-navigation-buttons .btn-next:only-child {
+    margin-left: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Botões de Ação Personalizados (CTA e Referências)
+--------------------------------------------------------------*/
+
+/* Estilo para o botão de destaque "Fazer o Teste" */
+.btn-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1D2D44;
+  background-color: #F0EBD8;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #1d2d44;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: #f0ebd8;
+}
+
+/* Estilo para o botão secundário "Referências" */
+.btn-references {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: #f0ebd8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-references:hover {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+  color: var(--default-color);
+}
+
 /* Estilos Customizados para os Acordeões (Depressão & Abandono Emocional)
 --------------------------------------------------------------*/
 #features .accordion,
@@ -5105,4 +5197,39 @@ section,
   background-color: #7e0606;
   border-color: #7e0606;
   color: #f0ebd8;
+}
+
+/*--------------------------------------------------------------
+# Seta Animada para Rolar para Baixo (Página do Quiz)
+--------------------------------------------------------------*/
+
+.scroll-down-arrow {
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #f0ebd8;
+  font-size: 3rem;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  animation: bounceArrow 2s ease-in-out infinite;
+}
+
+.scroll-down-arrow:hover {
+  opacity: 1; 
+}
+
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  50% {
+    transform: translateY(15px) translateX(-50%);
+  }
+}
+
+
+.quiz-section .container {
+    position: relative;
 }
