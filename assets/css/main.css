@@ -2994,7 +2994,7 @@ section,
   font-family: var(--heading-font);
   font-size: 1.25rem;
   font-weight: 300;
-  color: #ffffff;
+  color: #f0ebd8;
   transition: all 0.3s ease;
   line-height: 1.5;
   letter-spacing: -0.01em;
@@ -3042,6 +3042,26 @@ section,
   line-height: 1.8;
   font-size: 1rem;
   font-weight: 300;
+}
+
+#faq .accordion-item {
+  position: relative;
+  z-index: 1;
+  transition: z-index 0s 0.3s;
+}
+
+#faq .accordion-button {
+  transition: transform 0.3s ease-in-out;
+}
+
+#faq .accordion-item:hover {
+  z-index: 2;
+  transition-delay: 0s;
+}
+
+
+#faq .accordion-item:hover .accordion-button {
+  transform: scale(1.02);
 }
 
 /* Estilos Customizados para o Acordeão na Seção FAQ

@@ -53,9 +53,9 @@
             <li><a href="#abandono">Abandono Emocional</a></li>
             <li><a href="#features-cards">Inspirações</a></li>
             <li><a href="#testimonials">Testemunhas</a></li>
+            <li><a href="#faq">F.A.Q</a></li>
             <li><a href="#team">Equipe</a></li>
             <li><a href="#contact">Feedback</a></li>
-            <li><a href="quiz.html">Teste</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -269,9 +269,9 @@
                           class="bi bi-arrow-right"></i></button>
                     </div>
                     <button type="button" class="btn btn-references mt-4" data-bs-toggle="modal"
-                        data-bs-target="#efeitosModal">
-                        Referências
-                      </button>
+                      data-bs-target="#efeitosModal">
+                      Referências
+                    </button>
                   </div>
                 </div>
                 <div class="col-lg-6">
@@ -361,9 +361,9 @@
                           class="bi bi-arrow-right"></i></button>
                     </div>
                     <button type="button" class="btn btn-references mt-4" data-bs-toggle="modal"
-                        data-bs-target="#efeitosModal">
-                        Referências
-                      </button>
+                      data-bs-target="#efeitosModal">
+                      Referências
+                    </button>
                   </div>
                 </div>
                 <div class="col-lg-6">
@@ -621,9 +621,9 @@
                           class="bi bi-arrow-right"></i></button>
                     </div>
                     <button type="button" class="btn btn-references mt-4" data-bs-toggle="modal"
-                        data-bs-target="#efeitosModal">
-                        Referências
-                      </button>
+                      data-bs-target="#efeitosModal">
+                      Referências
+                    </button>
                   </div>
                 </div>
                 <div class="col-lg-6">
@@ -697,9 +697,9 @@
                           class="bi bi-arrow-right"></i></button>
                     </div>
                     <button type="button" class="btn btn-references mt-4" data-bs-toggle="modal"
-                        data-bs-target="#efeitosModal">
-                        Referências
-                      </button>
+                      data-bs-target="#efeitosModal">
+                      Referências
+                    </button>
                   </div>
                 </div>
                 <div class="col-lg-6">
@@ -992,7 +992,7 @@
     <!-- Faq Section -->
     <section id="faq" class="faq section">
       <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">P.F.</span>
+        <span class="subtitle">F.A.Q</span>
         <h2>Perguntas Frequentes</h2>
         <p>É normal ter dúvidas sobre esse tema, pois é um assunto muito complicado. Aqui estão algumas das dúvidas que
           mais recebemos:</p>
@@ -1489,17 +1489,19 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+
+      // ===================================================================
+      // LÓGICA PARA A MODAL DE CONFIRMAÇÃO DE RESET (SEU CÓDIGO - JÁ ESTÁ CORRETO)
+      // ===================================================================
       const confirmResetBtn = document.getElementById('btn-confirm-reset');
       const contactForm = document.querySelector('.contact-form');
       const resetModalEl = document.getElementById('confirmResetModal');
 
       if (confirmResetBtn) {
         confirmResetBtn.addEventListener('click', () => {
-          // 1. Limpa o formulário
           if (contactForm) {
             contactForm.reset();
           }
-          // 2. Fecha a modal
           const modalInstance = bootstrap.Modal.getInstance(resetModalEl);
           if (modalInstance) {
             modalInstance.hide();
@@ -1507,6 +1509,9 @@
         });
       }
 
+      // ===================================================================
+      // LÓGICA PARA OS BOTÕES DE NAVEGAÇÃO DAS ABAS (SEU CÓDIGO - JÁ ESTÁ CORRETO)
+      // ===================================================================
       const tabNavButtons = document.querySelectorAll('.btn-tab-nav');
 
       tabNavButtons.forEach(button => {
@@ -1530,6 +1535,28 @@
           }
         });
       });
+
+      // ===================================================================
+      // NOVO CÓDIGO: SCROLL PARA O TOPO AO TROCAR DE ABA (A PARTE QUE FALTAVA)
+      // ===================================================================
+      const allTabsWrappers = document.querySelectorAll('.tabs-wrapper');
+
+      allTabsWrappers.forEach(wrapper => {
+        // Ouve o evento 'shown.bs.tab' que o Bootstrap dispara
+        wrapper.addEventListener('shown.bs.tab', event => {
+          // Encontra o elemento .tabs-header que está dentro do wrapper atual
+          const tabsHeader = wrapper.querySelector('.tabs-header');
+
+          if (tabsHeader) {
+            // Rola suavemente para o topo do cabeçalho das abas
+            tabsHeader.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
     });
   </script>
 
