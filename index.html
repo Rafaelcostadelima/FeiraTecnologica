@@ -76,9 +76,7 @@
                 abandono emocional. Usamos os livros "Filhos do Quarto" e "Pássaro Contra a Vidraça" como suporte da
                 nossa tese.</p>
               <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-                <a href="#about" class="btn btn-primary">Sobre nós</a>
-                <a href="#features" class="btn btn-primary">Conteúdo</a>
-                <a href="#features-cards" class="btn btn-primary">Livros</a>
+                <a href="#about" class="btn btn-primary">Explorar</a>
               </div>
             </div>
           </div>
@@ -1280,7 +1278,7 @@
                 </div>
                 <button type="submit" class="send-button">Envie o seu feedback<span
                     class="button-arrow">→</span></button>
-                <button type="button" class="send-button" data-bs-toggle="modal" data-bs-target="#confirmResetModal">
+                <button type="button" class="send-button secondary-action" data-bs-toggle="modal" data-bs-target="#confirmResetModal">
                   Limpar o formulário
                 </button>
               </form>
@@ -1487,78 +1485,85 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
 
-      // ===================================================================
-      // LÓGICA PARA A MODAL DE CONFIRMAÇÃO DE RESET (SEU CÓDIGO - JÁ ESTÁ CORRETO)
-      // ===================================================================
-      const confirmResetBtn = document.getElementById('btn-confirm-reset');
-      const contactForm = document.querySelector('.contact-form');
-      const resetModalEl = document.getElementById('confirmResetModal');
-
-      if (confirmResetBtn) {
-        confirmResetBtn.addEventListener('click', () => {
-          if (contactForm) {
-            contactForm.reset();
-          }
-          const modalInstance = bootstrap.Modal.getInstance(resetModalEl);
-          if (modalInstance) {
-            modalInstance.hide();
-          }
-        });
-      }
-
-      // ===================================================================
-      // LÓGICA PARA OS BOTÕES DE NAVEGAÇÃO DAS ABAS (SEU CÓDIGO - JÁ ESTÁ CORRETO)
-      // ===================================================================
-      const tabNavButtons = document.querySelectorAll('.btn-tab-nav');
-
-      tabNavButtons.forEach(button => {
-        button.addEventListener('click', event => {
-          event.preventDefault();
-          const direction = button.dataset.direction;
-          const tabsWrapper = button.closest('.tabs-wrapper');
-          if (!tabsWrapper) return;
-          const tabLinks = Array.from(tabsWrapper.querySelectorAll('.nav-tabs .nav-link'));
-          const currentIndex = tabLinks.findIndex(link => link.classList.contains('active'));
-          let newIndex;
-          if (direction === 'next') {
-            newIndex = currentIndex + 1;
-          } else {
-            newIndex = currentIndex - 1;
-          }
-          if (newIndex >= 0 && newIndex < tabLinks.length) {
-            const newTabLink = tabLinks[newIndex];
-            const tab = new bootstrap.Tab(newTabLink);
-            tab.show();
-          }
-        });
+    // ===== LÓGICA PARA A MODAL E BOTÕES (JÁ EXISTENTE E CORRETA) =====
+    // ... (O código da modal e dos botões de navegação que já está funcionando fica aqui) ...
+    const confirmResetBtn = document.getElementById('btn-confirm-reset');
+    const contactForm = document.querySelector('.contact-form');
+    const resetModalEl = document.getElementById('confirmResetModal');
+    if (confirmResetBtn) {
+      confirmResetBtn.addEventListener('click', () => {
+        if (contactForm) contactForm.reset();
+        const modalInstance = bootstrap.Modal.getInstance(resetModalEl);
+        if (modalInstance) modalInstance.hide();
       });
+    }
 
-      // ===================================================================
-      // NOVO CÓDIGO: SCROLL PARA O TOPO AO TROCAR DE ABA (A PARTE QUE FALTAVA)
-      // ===================================================================
-      const allTabsWrappers = document.querySelectorAll('.tabs-wrapper');
-
-      allTabsWrappers.forEach(wrapper => {
-        // Ouve o evento 'shown.bs.tab' que o Bootstrap dispara
-        wrapper.addEventListener('shown.bs.tab', event => {
-          // Encontra o elemento .tabs-header que está dentro do wrapper atual
-          const tabsHeader = wrapper.querySelector('.tabs-header');
-
-          if (tabsHeader) {
-            // Rola suavemente para o topo do cabeçalho das abas
-            tabsHeader.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
+    const tabNavButtons = document.querySelectorAll('.btn-tab-nav');
+    tabNavButtons.forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        const direction = button.dataset.direction;
+        const tabsWrapper = button.closest('.tabs-wrapper');
+        if (!tabsWrapper) return;
+        const tabLinks = Array.from(tabsWrapper.querySelectorAll('.nav-tabs .nav-link'));
+        const currentIndex = tabLinks.findIndex(link => link.classList.contains('active'));
+        let newIndex = (direction === 'next') ? currentIndex + 1 : currentIndex - 1;
+        if (newIndex >= 0 && newIndex < tabLinks.length) {
+          const tab = new bootstrap.Tab(tabLinks[newIndex]);
+          tab.show();
+        }
       });
-
     });
-  </script>
+
+    const allTabsWrappers = document.querySelectorAll('.tabs-wrapper');
+    allTabsWrappers.forEach(wrapper => {
+      wrapper.addEventListener('shown.bs.tab', event => {
+        const tabsHeader = wrapper.querySelector('.tabs-header');
+        if (tabsHeader) {
+          tabsHeader.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // =========================================================================
+    // CÓDIGO CORRIGIDO: SCROLL PARA O ITEM DO ACORDEÃO COM DESLOCAMENTO
+    // =========================================================================
+    const allAccordions = document.querySelectorAll('.accordion');
+
+    allAccordions.forEach(accordion => {
+      accordion.addEventListener('shown.bs.collapse', event => {
+        
+        // 1. Encontra o cabeçalho do item que foi aberto
+        const header = event.target.previousElementSibling;
+        if (!header) return;
+
+        // 2. Pega o elemento do cabeçalho fixo do site
+        const fixedHeader = document.querySelector('#header');
+        
+        // 3. Calcula a altura do cabeçalho fixo (ou 0 se não existir)
+        const headerHeight = fixedHeader ? fixedHeader.offsetHeight : 0;
+        
+        // 4. Calcula a posição correta para a rolagem
+        const elementPosition = header.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerHeight - 15;
+
+        // 5. Rola a janela para a posição calculada
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+      });
+    });
+
+  });
+</script>
 
 </body>
 

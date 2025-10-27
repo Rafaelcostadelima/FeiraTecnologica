@@ -1451,7 +1451,7 @@ section,
   background: #f0ebd8;
   border-radius: 20px;
   padding: 8px;
-  box-shadow: 0 2px 20px color-mix(in srgb, var(--default-color), transparent 94%);
+  box-shadow: 0 2px 20px color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
 @media (max-width: 768px) {
@@ -1484,12 +1484,13 @@ section,
 }
 
 .features .tabs-header .nav-tabs .nav-link.active {
-  background: #75a9f3b8;
+  background: #335f9cb8;
+  color: #1d2d44;
 }
 
 .features .tabs-header .nav-tabs .nav-link.active .tab-content-preview .tab-number {
   color: #f0ebd8;
-  background: #748CAB;
+  background: #47566a;
 }
 
 .features .tabs-header .nav-tabs .nav-link.active .tab-content-preview .tab-text h6,
@@ -1867,18 +1868,6 @@ section,
   color: #f0ebd8;
 }
 
-
-@media (max-width: 576px) {
-  .tab-navigation-buttons {
-    flex-direction: column-reverse;
-    align-items: stretch;
-  }
-
-  .tab-navigation-buttons .btn-next:only-child {
-    margin-left: 0;
-  }
-}
-
 /*--------------------------------------------------------------
 # Botões de Ação Personalizados (CTA e Referências)
 --------------------------------------------------------------*/
@@ -1985,6 +1974,14 @@ section,
 #features .accordion-body .feature-points,
 #abandono .accordion-body .feature-points {
   margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Ajuste de espaçamento entre as abas e o conteúdo
+--------------------------------------------------------------*/
+#features .tab-content,
+#abandono .tab-content {
+  margin-top: -1.5rem;
 }
 
 /* Estilo para o Card de Ajuda na Aba 4 da Seção Features
@@ -3789,6 +3786,10 @@ section,
   margin-bottom: 0;
 }
 
+.contact .contact-sidebar .contact-method .contact-details p a{
+  text-decoration: underline;
+}
+
 .contact .contact-sidebar .connect-section {
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   padding-top: 40px;
@@ -3880,6 +3881,18 @@ section,
     padding-bottom: 40px;
   }
 
+}
+
+/* Adicione este estilo ao main.css */
+.contact-form .send-button .secondary-action {
+  background-color: transparent;
+  color: #f0ebd8;
+  border: 1px solid #748CAB;
+}
+
+.contact-form .send-button .secondary-action:hover {
+  background-color: #1d2d44;
+  border-color: #1d2d44;
 }
 
 /*--------------------------------------------------------------
@@ -5252,4 +5265,28 @@ section,
 
 .quiz-section .container {
     position: relative;
+}
+
+/*--------------------------------------------------------------
+# Centralização Vertical do Toggle de Navegação Móvel (CORRIGIDO)
+--------------------------------------------------------------*/
+
+/* Aplica o estilo apenas em telas menores que 1200px */
+@media (max-width: 1199.98px) {
+  .navmenu {
+    /* Transforma o contêiner em um flexbox */
+    display: flex;
+    
+    /* A MÁGICA: Centraliza o ícone verticalmente */
+    align-items: center;
+
+    /* Empurra o ícone para a direita */
+    justify-content: flex-end;
+
+    /* Garante que o contêiner ocupe todo o espaço disponível */
+    width: 100%;
+    
+    /* DETALHE CRUCIAL: Força o contêiner a ter 100% da altura do seu pai */
+    height: 100%;
+  }
 }
